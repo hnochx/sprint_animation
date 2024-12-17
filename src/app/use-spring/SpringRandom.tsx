@@ -30,17 +30,9 @@ const SpringRandom: NextPage = () => {
     []
   );
 
-  // const handleStart = () => {
-  //   api.start({ value: 9999 });
-  // };
-
-  // const handleReset = () => {
-  //   api.start({ value: 0 });
-  // };
-
-  // const handleStop = () => {
-  //   api.stop();
-  // };
+  useEffect(() => {
+    api.start({ value: num });
+  }, [props]);
 
   return (
     <div>
@@ -50,20 +42,6 @@ const SpringRandom: NextPage = () => {
         onClick={handleStart}
       >
         Start
-      </button>
-      <button
-        type="button"
-        className="px-2 py-1 bg-blue-400"
-        onClick={handleReset}
-      >
-        Reset
-      </button>
-      <button
-        type="button"
-        className="px-2 py-1 bg-blue-400"
-        onClick={handleStop}
-      >
-        Stop
       </button> */}
       <br />
       <animated.span>{props.value.to((x) => x.toFixed(0))}</animated.span>
