@@ -8,7 +8,7 @@ const MotionScroll = () => {
   const [yscrollProg, setYscorllProg] = useState(0);
   const [textShow, setTextShow] = useState(false);
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
+  useMotionValueEvent(scrollYProgress, "change", () => {
     setYscorllProg(scrollYProgress.get() * 100);
 
     if (scrollYProgress.get() > 0.7) {
@@ -38,7 +38,7 @@ const MotionScroll = () => {
               <motion.span
                 className="block"
                 initial={{ y: 150 }}
-                whileInView={
+                animate={
                   textShow ? { y: 0, transition: { duration: 0.2 } } : {}
                 }
               >
@@ -49,7 +49,7 @@ const MotionScroll = () => {
               <motion.span
                 className="block"
                 initial={{ y: 150 }}
-                whileInView={
+                animate={
                   textShow ? { y: 0, transition: { duration: 0.2 } } : {}
                 }
               >
